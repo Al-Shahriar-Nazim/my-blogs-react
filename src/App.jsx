@@ -10,7 +10,7 @@ function App() {
       {/* <h2 className="text-3xl">My Articales</h2> */}
       <Navbar></Navbar>
 
-      <div className="w-full flex">
+      <div className="w-full flex p-2">
         <div className="w-[70%]">
           <Suspense fallback={<p>Loading....</p>}>
             <Blogs blogsPromised={blogsPromised}></Blogs>
