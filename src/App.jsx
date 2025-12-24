@@ -13,11 +13,18 @@ function App() {
     setBookMarked(newBookMarked);
   };
 
-  const handleMarkTime = (time) => {
+  const handleMarkTime = (time,id) => {
     // console.log(time);
     const newTime = markTime+time;
     setMarkTime(newTime);
+    // console.log(id)
+    handleFromBookMark(id);
   };
+
+  const handleFromBookMark = (id) =>{
+    const remainingBookmark = bookMarked.filter((mark)=>mark.id!==id);
+    setBookMarked(remainingBookmark);
+  }
 
 
   const blogsPromised = fetch("blogs.json").then((res) => res.json());
